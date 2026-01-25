@@ -1,0 +1,231 @@
+/* 1. Universal Reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 2. Layout Structure */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Keeps footer at bottom */
+    background-color: #ffffff;
+}
+
+.images {
+    height: 1.5rem;
+    width: 1.5rem;
+    flex-shrink: 0; /* Prevents icons from squishing */
+}
+
+/* 3. Header Styling */
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+    padding: 0 1.5rem;
+}
+
+header .right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+header .right ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header .right ul li a {
+    text-decoration: none;
+    color: #4d5156;
+    font-size: 0.9rem;
+}
+
+header .right ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 4. Main Section (Fixes the Pushing) */
+main {
+    flex: 1; /* Takes up all available middle space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.main .upper {
+    margin-bottom: 1.5rem;
+}
+
+/* The Search "Pill" Container */
+.main .middle {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   max-width: 584px;
+   height: 48px;
+   padding: 0 12px;
+   border: 1px solid #dfe1e5;
+   border-radius: 24px;
+   transition: box-shadow 0.3s;
+}
+
+.main .middle:hover {
+    box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+
+/* Internal Alignment of Search Bar */
+.input-field {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+}
+
+.plus {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    color: #9aa0a6;
+}
+
+.search-area {
+    flex: 1;
+    height: 100%;
+}
+
+.search-area input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    color: #202124;
+}
+
+/* Right Side Buttons (Mic, Camera, AI) */
+.main .middle .button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main .middle .button a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #f8f9fa;
+    border: 1px solid transparent;
+    padding: 4px 10px;
+    border-radius: 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: #3c4043;
+}
+
+.main .middle .button a:hover {
+    border: 1px solid #dadce0;
+    background-color: #f1f3f4;
+}
+
+.main .middle .button button span {
+    color: #3c4043;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* 5. Lower Buttons (Search & Lucky) */
+.main .lower {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.main .lower .links {
+    background-color: #f8f9fa;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.main .lower .links:hover {
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    color: #202124;
+}
+
+/* 6. Footer Styling */
+footer {
+    background-color: #f2f2f2;
+}
+
+footer .top {
+    padding: 15px 25px;
+    border-bottom: 1px solid #dadce0;
+}
+
+footer .top p {
+    color: #70757a;
+    font-size: 0.9rem;
+}
+
+footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    flex-wrap: wrap; /* Good for mobile */
+}
+
+footer .bottom ul {
+    list-style: none;
+    display: flex;
+}
+
+footer .bottom ul li {
+    padding: 15px;
+}
+
+footer .bottom ul li a {
+    color: #70757a;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+footer .bottom ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 7. Responsive Mobile Tweaks */
+@media (max-width: 480px) {
+    .main .upper svg {
+        width: 160px;
+    }
+    
+    /* Hide 'AI Mode' text on tiny screens, keep icon */
+    .main .middle .button button span {
+        display: none;
+    }
+
+    footer .bottom {
+        justify-content: center;
+    }
+}
